@@ -1,0 +1,30 @@
+<div style="display: flex; flex-direction: column;">
+  <mat-form-field appearance="outline">
+    <mat-label>Ссылка на рецепт</mat-label>
+    <input matInput placeholder="Вставьте ссылку рецепта который хотите сохранить" required type="url">
+    <mat-icon matSuffix>link</mat-icon>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Категория" required="">
+      <mat-option *ngFor="let cat of cats" [value]="cat.value">
+        {{cat.viewValue}}
+      </mat-option>
+    </mat-select>
+    <mat-hint align="end">
+      Список категорий возможно отредактировать в разделе «Категории»
+    </mat-hint>
+  </mat-form-field>
+  <mat-radio-group value="2" style="margin: 1.25em 0;">
+    <mat-radio-button value="2" style="margin-right: 1.25em;">Вегeтарианский</mat-radio-button>
+    <mat-radio-button value="1" style="margin-right: 1.25em;">Веганский</mat-radio-button>
+    <mat-radio-button value="3">С мясом/рыбой</mat-radio-button>
+  </mat-radio-group>
+  <mat-form-field>
+    <input matInput placeholder="Ингридиенты">
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput placeholder="Примечания"></textarea>
+  </mat-form-field>
+  <mat-slide-toggle style="margin-bottom: 1.25em">В Избранное!</mat-slide-toggle>
+</div>
+<button mat-raised-button color="accent">Сохранить</button>
