@@ -5,16 +5,16 @@
                [opened]="!(isHandset$ | async)">
     <mat-toolbar>Меню</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/add-recipe">
+      <a mat-list-item routerLink="/add-recipe" routerLinkActive="active">
         <mat-icon style="margin-right: 5px;">note_add</mat-icon>
         Добавить рецепт</a>
-      <a mat-list-item routerLink="/recipes">
+      <a mat-list-item routerLink="/recipes" routerLinkActive="active">
         <mat-icon style="margin-right: 5px;">book</mat-icon>
         Рецепты</a>
-      <a mat-list-item routerLink="/categories">
+      <a mat-list-item routerLink="/categories" routerLinkActive="active">
         <mat-icon style="margin-right: 5px;">view_list</mat-icon>
         Категории</a>
-      <a mat-list-item routerLink="/support-contact">
+      <a mat-list-item routerLink="/support-contact" routerLinkActive="active">
         <mat-icon style="margin-right: 5px;">contact_support</mat-icon>
         Поддержка</a>
     </mat-nav-list>
