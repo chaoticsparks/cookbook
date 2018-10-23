@@ -11,40 +11,16 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { SupportContactComponent } from './support-contact/support-contact.component';
 import { NotFound404Component } from './not-found404/not-found404.component';
+import { AppRoutingModule } from './app-routing.module';
 
-const appRoutes: Routes = [
-  {
-    path: 'add-recipe',
-    component: AddRecipeComponent,
-    data: { title: 'Добавить рецепт' }
-  },
-  {
-    path: 'recipes',
-    component: RecipesComponent,
-    data: { title: 'Рецепты' }
-  },
-  {
-    path: 'categories',
-    component: CategoriesComponent,
-    data: { title: 'Категории' }
-  },
-  {
-    path: 'support-contact',
-    component: SupportContactComponent,
-    data: { title: 'Поддержка' }
-  },
-  {
-    path: '',
-    redirectTo: '/add-recipe',
-    pathMatch: 'full'
-  },
-  {
-    path: '**',
-    redirectTo: '/not-found404',
-  },
-];
 
 @NgModule({
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    AppRoutingModule,
+  ],
   declarations: [
     AppComponent,
     MainNavComponent,
@@ -54,13 +30,6 @@ const appRoutes: Routes = [
     SupportContactComponent,
     NotFound404Component
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    RouterModule.forRoot(appRoutes),
-  ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
