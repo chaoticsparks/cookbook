@@ -1,10 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './material/material.module';
+import { AppMaterialModule } from './app-material.module';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { AddRecipeComponent } from './add-recipe/add-recipe.component';
 import { RecipesComponent } from './recipes/recipes.component';
@@ -18,7 +17,7 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule,
+    AppMaterialModule,
     AppRoutingModule,
   ],
   declarations: [
