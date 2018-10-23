@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterialModule } from './app-material.module';
-import { MainNavComponent } from './main-nav/main-nav.component';
 import { AddRecipeComponent } from './add-recipe/add-recipe.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { CategoriesComponent } from './categories/categories.component';
@@ -22,7 +21,6 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   declarations: [
     AppComponent,
-    MainNavComponent,
     AddRecipeComponent,
     RecipesComponent,
     CategoriesComponent,

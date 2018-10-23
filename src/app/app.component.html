@@ -1,3 +1,39 @@
-<app-main-nav></app-main-nav>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'"
+               [opened]="!(isHandset$ | async)">
+    <mat-toolbar>Меню</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/add-recipe" routerLinkActive="active">
+        <mat-icon style="margin-right: 5px;">note_add</mat-icon>
+        Добавить рецепт</a>
+      <a mat-list-item routerLink="/recipes" routerLinkActive="active">
+        <mat-icon style="margin-right: 5px;">book</mat-icon>
+        Рецепты</a>
+      <a mat-list-item routerLink="/categories" routerLinkActive="active">
+        <mat-icon style="margin-right: 5px;">view_list</mat-icon>
+        Категории</a>
+      <a mat-list-item routerLink="/support-contact" routerLinkActive="active">
+        <mat-icon style="margin-right: 5px;">contact_support</mat-icon>
+        Поддержка</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Книга рецептов <mat-icon style="vertical-align: middle">arrow_right</mat-icon> Добавить рецепт</span>
+    </mat-toolbar>
 
-
+    <main style="max-width: 700px; padding: 15px;">
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
