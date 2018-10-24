@@ -9,6 +9,7 @@ import { SupportContactComponent } from './support-contact/support-contact.compo
 import { NotFound404Component } from './not-found404/not-found404.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RecipesModule } from './recipes/recipes.module';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { RecipesModule } from './recipes/recipes.module';
     AppComponent,
     CategoriesComponent,
     SupportContactComponent,
-    NotFound404Component
+    NotFound404Component,
+    BreadcrumbComponent
   ],
   bootstrap: [AppComponent]
 })
