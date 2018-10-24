@@ -1,22 +1,10 @@
 import { NgModule } from '@angular/core';
-import { AddRecipeComponent } from './add-recipe/add-recipe.component';
-import { RecipesComponent } from './recipes/recipes.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { SupportContactComponent } from './support-contact/support-contact.component';
 import { NotFound404Component } from './not-found404/not-found404.component';
 import { RouterModule, Routes } from '@angular/router';
 
 const appRoutes: Routes = [
-  {
-    path: 'add-recipe',
-    component: AddRecipeComponent,
-    data: { title: 'Добавить рецепт' }
-  },
-  {
-    path: 'recipes',
-    component: RecipesComponent,
-    data: { title: 'Рецепты' }
-  },
   {
     path: 'categories',
     component: CategoriesComponent,
