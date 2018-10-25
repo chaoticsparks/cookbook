@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { filter, map, mergeMap, switchMap, tap } from 'rxjs/operators';
+import { filter, map, mergeMap, pluck, switchMap, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -23,7 +23,7 @@ export class BreadcrumbComponent implements OnInit {
       switchMap(() => {
         return this.activatedRoute.firstChild.data;
       }),
-      map(data => data.title) //TODO: Understand how the code works
+      pluck('title')
     );
   }
 
