@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import {
+  MatAutocompleteModule,
   MatButtonModule, MatCardModule,
   MatChipsModule,
   MatFormFieldModule,
@@ -24,7 +25,8 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatChipsModule,
     MatSelectModule,
     MatRadioModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatAutocompleteModule
   ],
   exports: [
     MatButtonModule,
@@ -39,7 +41,8 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatChipsModule,
     MatSelectModule,
     MatRadioModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatAutocompleteModule
   ],
 })
 export class AppMaterialModule {

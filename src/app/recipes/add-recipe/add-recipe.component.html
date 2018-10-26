@@ -30,6 +30,32 @@
       <input matInput formControlName="ingredients" placeholder="Ингридиенты">
     </mat-form-field>
     <mat-form-field>
+      <mat-chip-list #chipList>
+        <mat-chip
+          *ngFor="let fruit of fruits"
+          [selectable]="selectable"
+          [removable]="removable"
+          (removed)="remove(fruit)">
+          {{fruit}}
+          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+        </mat-chip>
+        <input
+          placeholder="Ингридиенты"
+          #fruitInput
+          [formControl]="fruitCtrl"
+          [matAutocomplete]="auto"
+          [matChipInputFor]="chipList"
+          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          [matChipInputAddOnBlur]="addOnBlur"
+          (matChipInputTokenEnd)="add($event)">
+      </mat-chip-list>
+      <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+        <mat-option *ngFor="let fruit of filteredFruits | async" [value]="fruit">
+          {{fruit}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    <mat-form-field>
       <textarea matInput formControlName="notes" placeholder="Примечания"></textarea>
     </mat-form-field>
     <mat-slide-toggle formControlName="favorite" style="margin-bottom: 1.25em">В Избранное!</mat-slide-toggle>
