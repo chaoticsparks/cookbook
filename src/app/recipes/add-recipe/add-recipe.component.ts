@@ -1,4 +1,6 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatInput } from '@angular/material';
 
 export interface Cats {
   value: string;
@@ -10,9 +12,19 @@ export interface Cats {
   templateUrl: './add-recipe.component.html',
   styleUrls: ['./add-recipe.component.scss']
 })
-export class AddRecipeComponent {
+export class AddRecipeComponent implements OnInit {
 
-  // @ViewChild('recipeLink') recipeLinkElement: ElementRef;
+  constructor(private fb: FormBuilder) {
+  }
+
+  addRecipeForm: FormGroup = this.fb.group({
+    url: [null, Validators.required],
+    category: [null, Validators.required],
+    diet: ['2', Validators.required],
+    ingredients: [null],
+    notes: [null],
+    favorite: [false],
+  });
 
   cats: Cats[] = [
     {value: 'steak-1', viewValue: 'Завтраки'},
@@ -22,10 +34,15 @@ export class AddRecipeComponent {
     {value: 'tacos-4', viewValue: 'Десерты'},
   ];
 
-  constructor() { }
+  @ViewChild('recipeUrl', {read: MatInput}) recipeUrl: MatInput;
 
-  /*ngAfterViewInit() {
-    this.recipeLinkElement.nativeElement.focus();
-  }*/
+  onSubmit() {
+    this.addRecipeForm.disable();
+    console.warn(this.addRecipeForm.value);
+  }
+
+  ngOnInit(): void { // TODO: BUG: Should be on ngAfterViewInit() but raises error: "ExpressionChangedAfterItHasBeenCheckedError"
+    this.recipeUrl.focus();
+  }
 
 }
