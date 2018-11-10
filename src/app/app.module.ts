@@ -10,11 +10,16 @@ import { NotFound404Component } from './not-found404/not-found404.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RecipesModule } from './recipes/recipes.module';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
 
 
 @NgModule({
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
     BrowserAnimationsModule,
     AppMaterialModule,
     RecipesModule,

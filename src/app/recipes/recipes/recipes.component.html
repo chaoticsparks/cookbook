@@ -1,3 +1,6 @@
-<p>
-  recipes works!
-</p>
+<ul>
+  <li *ngFor="let recipe of recipes | async">
+    {{recipe.title}}
+  </li>
+</ul>
+
