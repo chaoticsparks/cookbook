@@ -27,9 +27,6 @@
       <mat-radio-button value="3">С мясом/рыбой</mat-radio-button>
     </mat-radio-group>
     <mat-form-field>
-      <input matInput formControlName="ingredients" placeholder="Ингридиенты">
-    </mat-form-field>
-    <mat-form-field>
       <mat-chip-list #chipList>
         <mat-chip
           *ngFor="let fruit of fruits"
@@ -40,6 +37,7 @@
           <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
         </mat-chip>
         <input
+          formControlName="ingredients"
           placeholder="Ингридиенты"
           #fruitInput
           [formControl]="fruitCtrl"

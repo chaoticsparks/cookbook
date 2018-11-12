@@ -26,7 +26,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatSelectModule,
     MatRadioModule,
     MatSlideToggleModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
   ],
   exports: [
     MatButtonModule,
@@ -42,7 +42,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatSelectModule,
     MatRadioModule,
     MatSlideToggleModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
   ],
 })
 export class AppMaterialModule {
