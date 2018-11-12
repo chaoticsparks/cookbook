@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AngularFirestore} from '@angular/fire/firestore';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-categories',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriesComponent implements OnInit {
 
-  constructor() { }
+  categories$: Observable<any[]>;
+
+  constructor(db: AngularFirestore) {
+    this.categories$ = db.collection('categories').valueChanges();
+  }
 
   ngOnInit() {
   }

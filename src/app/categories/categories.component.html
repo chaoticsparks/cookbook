@@ -1,5 +1,5 @@
-<mat-card class="l-cat-item">
-  Имя категории
+<mat-card class="l-cat-item" *ngFor="let cat of categories$ | async">
+  {{ cat.title }}
   <div class="l-cat-actions">
     <mat-icon>edit</mat-icon>
     <mat-icon>delete</mat-icon>
