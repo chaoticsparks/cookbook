@@ -1,0 +1,17 @@
+.card-for-form {
+  width: 100%;
+  max-width: 320px;
+}
+
+.signUp mat-form-field {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.signUp-button {
+  margin-top: 1rem;
+}
+
+::ng-deep .mat-card-header-text {
+  margin: 0 !important;
+}

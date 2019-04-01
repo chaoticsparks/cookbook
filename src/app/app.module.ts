@@ -13,6 +13,7 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {AuthModule} from './auth/auth.module';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
     BrowserAnimationsModule,
     AppMaterialModule,
     RecipesModule,
+    AuthModule,
     AppRoutingModule,
   ],
   declarations: [
