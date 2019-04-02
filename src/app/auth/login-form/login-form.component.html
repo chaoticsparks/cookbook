@@ -1,7 +1,7 @@
 <mat-card class="card-for-authForm">
   <mat-card-header>
     <mat-card-title>Авторизация</mat-card-title>
-    <mat-card-subtitle>Заполните поля или <a routerLink="/registration">зарегистрируйтесь</a></mat-card-subtitle>
+    <mat-card-subtitle>Используйте свои учетные данные <br>или <a routerLink="/registration">зарегистрируйтесь</a></mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <form [formGroup]="loginForm">
@@ -34,7 +34,16 @@
       <button
         class="authButton"
         mat-raised-button
-        color="primary" type="submit" [disabled]="!loginForm.valid" (click)="emitLogin()">Войти</button>
+        color="primary" type="submit" [disabled]="!loginForm.valid || isLoading" (click)="emitLogin()">Войти</button>
+      <mat-progress-spinner
+        class="authLoader"
+        diameter=20
+        color="accent"
+        mode="indeterminate"
+        *ngIf="isLoading"></mat-progress-spinner>
+        <div class="form-error-notification" *ngIf="error">
+          {{error}}
+        </div>
     </form>
   </mat-card-content>
   <!--  <mat-card-actions>

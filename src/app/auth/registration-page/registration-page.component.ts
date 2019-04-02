@@ -11,6 +11,7 @@ import {Router} from '@angular/router';
 })
 export class RegistrationPageComponent implements OnInit {
 
+  isLoading = false;
   constructor(private auth: AuthService,
               private router: Router) { }
 
@@ -18,9 +19,11 @@ export class RegistrationPageComponent implements OnInit {
   }
 
   register(dataToRegister: IDataToRegister) {
+    this.isLoading = true;
     this.auth.register(dataToRegister)
       .then(() => {
         this.router.navigate(['']);
+        this.isLoading = false;
       })
       .catch((e: FirebaseError) => {
         console.log(e.code, e.message); // TODO: Add handling to form

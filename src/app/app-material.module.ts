@@ -5,7 +5,7 @@ import {
   MatChipsModule,
   MatFormFieldModule,
   MatIconModule, MatInputModule,
-  MatListModule, MatMenuModule, MatRadioModule, MatSelectModule,
+  MatListModule, MatMenuModule, MatProgressSpinnerModule, MatRadioModule, MatSelectModule,
   MatSidenavModule, MatSlideToggleModule,
   MatToolbarModule
 } from '@angular/material';
@@ -27,7 +27,8 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatRadioModule,
     MatSlideToggleModule,
     MatAutocompleteModule,
-    MatMenuModule
+    MatMenuModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     MatButtonModule,
@@ -44,7 +45,8 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatRadioModule,
     MatSlideToggleModule,
     MatAutocompleteModule,
-    MatMenuModule
+    MatMenuModule,
+    MatProgressSpinnerModule
   ],
 })
 export class AppMaterialModule {

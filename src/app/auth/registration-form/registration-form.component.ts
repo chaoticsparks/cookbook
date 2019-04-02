@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {IDataToRegister} from '../i-data-to-register';
 
@@ -9,6 +9,7 @@ import {IDataToRegister} from '../i-data-to-register';
 })
 export class RegistrationFormComponent implements OnInit {
 
+  @Input() isLoading = false;
   @Output() signUp = new EventEmitter<IDataToRegister>();
 
   hide = true;

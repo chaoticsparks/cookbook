@@ -5,9 +5,16 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+
+.main-body {
+  margin-top: 1rem;
+}
+
 .card-for-authForm {
   width: 100%;
   max-width: 320px;
+  box-sizing: border-box;
+  margin: 0 auto;
 
   mat-form-field {
     width: 100%;
@@ -23,5 +30,19 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   margin-top: 1rem;
 }
 
+.authLoader {
+  display: inline-block !important;
+  vertical-align: middle;
+  margin-left: .5rem;
+}
+
+.form-error-notification {
+  font-size: .8rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: #ffd7d7;
+  border: 1px solid #ff6464;
+  border-radius: 4px;
+}
 
 

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {IDataToLogin} from '../i-data-to-login';
 
@@ -8,7 +8,8 @@ import {IDataToLogin} from '../i-data-to-login';
   styleUrls: ['./login-form.component.scss']
 })
 export class LoginFormComponent implements OnInit {
-
+  @Input() isLoading = false;
+  @Input() error = '';
   @Output() login = new EventEmitter<IDataToLogin>();
 
   hide = true;
@@ -33,7 +34,8 @@ export class LoginFormComponent implements OnInit {
     return this.loginForm.get('password');
   }
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder) {
+  }
 
   emitLogin() {
     this.login.emit(this.loginForm.value);
