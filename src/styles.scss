@@ -4,3 +4,24 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.card-for-authForm {
+  width: 100%;
+  max-width: 320px;
+
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .mat-card-header-text {
+    margin: 0 !important;
+  }
+}
+
+.authButton {
+  margin-top: 1rem;
+}
+
+
+

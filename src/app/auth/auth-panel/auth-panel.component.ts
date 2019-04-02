@@ -9,7 +9,7 @@ import {tap} from 'rxjs/operators';
 })
 export class AuthPanelComponent implements OnInit {
 
-  @Output() logOut = new EventEmitter<boolean>();
+  @Output() logout = new EventEmitter<boolean>();
 
   constructor(private auth: AuthService) { }
 
@@ -25,8 +25,8 @@ export class AuthPanelComponent implements OnInit {
   ngOnInit() {
   }
 
-  toLogOut() {
-    this.logOut.emit(true);
+  emitLogout() {
+    this.logout.emit(true);
   }
 
 }

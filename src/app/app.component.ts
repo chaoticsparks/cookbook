@@ -19,8 +19,8 @@ export class AppComponent {
       map(result => result.matches)
     );
 
-  logOut() {
-    this.auth.logOut()
+  logout() {
+    this.auth.logout()
       .then(() => {
         this.router.navigate(['login']);
       })

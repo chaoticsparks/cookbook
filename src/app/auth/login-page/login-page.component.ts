@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {IDataToLogin} from '../i-data-to-login';
+import {AuthService} from '../auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private auth: AuthService,
+              private router: Router) { }
 
   ngOnInit() {
   }
 
+  login(dataToLogin: IDataToLogin) {
+    this.auth.login(dataToLogin)
+      .then(() => this.router.navigate(['']));
+  }
 }

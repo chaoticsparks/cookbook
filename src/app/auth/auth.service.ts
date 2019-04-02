@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {IDataToRegister} from './i-data-to-register';
 import UserCredential = firebase.auth.UserCredential;
 import {AngularFireAuth} from '@angular/fire/auth';
+import {IDataToLogin} from './i-data-to-login';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class AuthService {
 
   isAuthenticated$ = this.afAuth.user;
 
-  signUp(dataToRegister: IDataToRegister): Promise<void> {
+  register(dataToRegister: IDataToRegister): Promise<void> {
     return this.afAuth.auth.createUserWithEmailAndPassword(dataToRegister.email, dataToRegister.password)
       .then((credentials: UserCredential) => {
         if (dataToRegister.name) {
@@ -24,7 +25,11 @@ export class AuthService {
       });
   }
 
-  logOut(): Promise<void> {
+  logout(): Promise<void> {
     return this.afAuth.auth.signOut();
+  }
+
+  login(dataToLogin: IDataToLogin): Promise<UserCredential> {
+    return this.afAuth.auth.signInWithEmailAndPassword(dataToLogin.email, dataToLogin.password);
   }
 }

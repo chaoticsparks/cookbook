@@ -17,8 +17,8 @@ export class RegistrationPageComponent implements OnInit {
   ngOnInit() {
   }
 
-  signUp(dataToRegister: IDataToRegister) {
-    this.auth.signUp(dataToRegister)
+  register(dataToRegister: IDataToRegister) {
+    this.auth.register(dataToRegister)
       .then(() => {
         this.router.navigate(['']);
       })
