@@ -3,11 +3,13 @@ import {CategoriesComponent} from './categories/categories.component';
 import {SupportContactComponent} from './support-contact/support-contact.component';
 import {NotFound404Component} from './not-found404/not-found404.component';
 import {RouterModule, Routes} from '@angular/router';
+import {AuthGuard} from './auth/auth.guard';
 
 const appRoutes: Routes = [
   {
     path: 'categories',
     component: CategoriesComponent,
+    canActivate: [AuthGuard],
     data: {title: 'Категории'}
   },
   {

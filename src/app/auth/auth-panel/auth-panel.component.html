@@ -1,0 +1,20 @@
+<button *ngIf="isAuthenticated$ | async as user; else guest"
+        mat-button
+        [matMenuTriggerFor]="menu">
+  <mat-icon aria-hidden="false" aria-label="Profile">account_circle</mat-icon>
+  {{user.email.split('@')[0]}}
+</button>
+<mat-menu #menu="matMenu">
+  <!--  <button mat-menu-item>Редактировать профиль</button>
+    <button mat-menu-item>Сбросить пароль</button>
+    <button mat-menu-item>Настройки</button>-->
+  <button mat-menu-item>Выход</button>
+</mat-menu>
+
+<ng-template #guest>
+  <ng-container *ngIf="isUserDataFetched">
+    <button mat-button routerLink="/login">Войти</button>
+    <button mat-button routerLink="/signup">Зарегистрироваться</button>
+  </ng-container>
+</ng-template>
+

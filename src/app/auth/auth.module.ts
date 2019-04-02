@@ -8,6 +8,7 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
 import {AppMaterialModule} from '../app-material.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AngularFireAuthModule} from '@angular/fire/auth';
+import { AuthPanelComponent } from './auth-panel/auth-panel.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,9 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
     AuthRoutingModule,
     AngularFireAuthModule
   ],
-  declarations: [LoginPageComponent, LoginFormComponent, SignupPageComponent, SignupFormComponent]
+  declarations: [LoginPageComponent, LoginFormComponent, SignupPageComponent, SignupFormComponent, AuthPanelComponent],
+  exports: [
+    AuthPanelComponent
+  ]
 })
 export class AuthModule { }
