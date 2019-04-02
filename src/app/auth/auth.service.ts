@@ -23,4 +23,8 @@ export class AuthService {
         }
       });
   }
+
+  logOut(): Promise<void> {
+    return this.afAuth.auth.signOut();
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {AuthService} from '../auth.service';
 import {tap} from 'rxjs/operators';
 
@@ -8,6 +8,8 @@ import {tap} from 'rxjs/operators';
   styleUrls: ['./auth-panel.component.scss']
 })
 export class AuthPanelComponent implements OnInit {
+
+  @Output() logOut = new EventEmitter<boolean>();
 
   constructor(private auth: AuthService) { }
 
@@ -21,6 +23,10 @@ export class AuthPanelComponent implements OnInit {
     );
 
   ngOnInit() {
+  }
+
+  toLogOut() {
+    this.logOut.emit(true);
   }
 
 }
