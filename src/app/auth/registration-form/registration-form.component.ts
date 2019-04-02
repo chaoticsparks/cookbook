@@ -10,6 +10,7 @@ import {IDataToRegister} from '../i-data-to-register';
 export class RegistrationFormComponent implements OnInit {
 
   @Input() isLoading = false;
+  @Input() error = '';
   @Output() signUp = new EventEmitter<IDataToRegister>();
 
   hide = true;

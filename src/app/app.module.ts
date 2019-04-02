@@ -9,7 +9,6 @@ import { SupportContactComponent } from './support-contact/support-contact.compo
 import { NotFound404Component } from './not-found404/not-found404.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RecipesModule } from './recipes/recipes.module';
-import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
@@ -31,8 +30,7 @@ import {AuthModule} from './auth/auth.module';
     AppComponent,
     CategoriesComponent,
     SupportContactComponent,
-    NotFound404Component,
-    BreadcrumbComponent
+    NotFound404Component
   ],
   bootstrap: [AppComponent]
 })

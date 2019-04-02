@@ -11,6 +11,7 @@ import {Router} from '@angular/router';
 })
 export class RegistrationPageComponent implements OnInit {
 
+  error = '';
   isLoading = false;
   constructor(private auth: AuthService,
               private router: Router) { }
@@ -26,7 +27,18 @@ export class RegistrationPageComponent implements OnInit {
         this.isLoading = false;
       })
       .catch((e: FirebaseError) => {
-        console.log(e.code, e.message); // TODO: Add handling to form
+        this.isLoading = false;
+        switch (e.code) {
+          case 'auth/email-already-in-use':
+            this.error = 'Пользователь с данным Email уже существует.';
+            break;
+          case 'auth/invalid-email':
+            this.error = 'Введенный Email не корректен';
+            break;
+          case 'auth/weak-password':
+            this.error = 'Введенный пароль слишком простой.';
+            break;
+        }
       });
   }
 }
