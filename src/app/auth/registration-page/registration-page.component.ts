@@ -5,11 +5,11 @@ import {FirebaseError} from 'firebase';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-signup-page',
-  templateUrl: './signup-page.component.html',
-  styleUrls: ['./signup-page.component.scss']
+  selector: 'app-registration-page',
+  templateUrl: './registration-page.component.html',
+  styleUrls: ['./registration-page.component.scss']
 })
-export class SignupPageComponent implements OnInit {
+export class RegistrationPageComponent implements OnInit {
 
   constructor(private auth: AuthService,
               private router: Router) { }

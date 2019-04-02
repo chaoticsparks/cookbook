@@ -3,11 +3,11 @@ import {FormBuilder, Validators} from '@angular/forms';
 import {IDataToRegister} from '../i-data-to-register';
 
 @Component({
-  selector: 'app-signup-form',
-  templateUrl: './signup-form.component.html',
-  styleUrls: ['./signup-form.component.scss']
+  selector: 'app-registration-form',
+  templateUrl: './registration-form.component.html',
+  styleUrls: ['./registration-form.component.scss']
 })
-export class SignupFormComponent implements OnInit {
+export class RegistrationFormComponent implements OnInit {
 
   @Output() signUp = new EventEmitter<IDataToRegister>();
 
