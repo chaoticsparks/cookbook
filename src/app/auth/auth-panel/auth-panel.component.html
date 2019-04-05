@@ -12,7 +12,7 @@
 </mat-menu>
 
 <ng-template #guest>
-  <ng-container *ngIf="isUserDataFetched">
+  <ng-container *ngIf="isUserDataFetched"> <!-- TODO: Remove this weird flag by changing observable -->
     <button mat-button routerLink="/login">Войти</button>
     <button mat-button routerLink="/registration">Зарегистрироваться</button>
   </ng-container>

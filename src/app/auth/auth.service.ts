@@ -21,7 +21,7 @@ export class AuthService {
       .pipe(
         switchMap(
           (credentials) => dataToRegister.name ?
-            from(credentials.user.updateProfile({
+            from(credentials.user.updateProfile({ // TODO: Move to separate method
               displayName: dataToRegister.name,
               photoURL: null
             }))
